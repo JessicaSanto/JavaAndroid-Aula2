@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+        <TextView
+                android:text="@string/quanto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_title"
+                android:textColor="#024377" android:textAlignment="center"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteY="104dp" tools:layout_editor_absoluteX="137dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/input_valor"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title" android:layout_marginTop="80dp"
+                android:hint="R$99.99" android:textAlignment="center" android:minHeight="48dp"
+                android:textColorHint="#8D6E63" app:layout_constraintHorizontal_bias="0.497"/>
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radio_group"
+                android:checkedButton="@id/radio_eur"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_valor" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintVertical_bias="1.0">
+
+            <RadioButton
+                    android:text="CLP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radio_clp"
+            />
+            <RadioButton
+                    android:text="EUR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radio_eur"
+            />
+            <RadioButton
+                    android:text="USD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radio_usd"
+            />
+            <Button
+                    android:text="Converter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/btn_converter"
+                    android:layout_marginTop="8dp" android:backgroundTint="#005598"/>
+        </RadioGroup>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_result"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title"
+                app:layout_constraintBottom_toTopOf="@+id/input_valor" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" android:textSize="20sp" android:textStyle="bold"
+                android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
